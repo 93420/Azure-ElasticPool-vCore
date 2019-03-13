@@ -6,16 +6,19 @@
             "type": "string",
             "metadata": {
                 "description": "SQL Server administrator login."
-            },
+	    }
+         },
         "administratorLoginPassword": {
             "type": "securestring",
             "metadata": {
                 "description": "SQL Server administrator login password."
-            },
+	    }
+        },
         "serverName": {
             "type": "string",
             "metadata": {
                 "description": "SQL Server name."
+	    }
             },
         "location": {
             "type": "string",
