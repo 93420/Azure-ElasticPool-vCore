@@ -31,32 +31,33 @@
                 "description": "The Elastic Pool name."
         },
         "skuName": {
-			"type": "string",
-            "defaultValue": "GP_Gen4",
+		"type": "string",
+		"defaultValue": "GP_Gen4",
 			"allowedValues": [
                 "GP_Gen4",
                 "GP_Gen5"
             ],
-            "metadata": {
+		"metadata": {
                 "description": "The Elastic Pool sku."
             }
         },
         "tier": {
-			"type": "string",
-            "defaultValue": "GeneralPurpose"
+		"type": "string",
+            	"defaultValue": "GeneralPurpose"
         },
         "poolLimit": {
-            "type": "int",
-			"defaultValue": "8",
-            "metadata": {
-                "description": "The Elastic Pool vCore."
-            },
+            	"type": "int",
+		"defaultValue": "8",
+           	"metadata": {
+                	"description": "The Elastic Pool vCore."
+            	},
+	},
         "poolSize": {
-            "defaultValue": 16106127360,
-			"type": "int",
-            "metadata": {
-                "description": "The Elastic Pool Size."
-            },
+		"defaultValue": 16106127360,
+		"type": "int",
+            	"metadata": {
+               		"description": "The Elastic Pool Size."
+            	},
         },
         "perDatabasePerformanceMin": {
 			"type": "int",
@@ -81,14 +82,14 @@
             "defaultValue": [
                 "db01",
                 "db02",
-				"db03",
+		"db03",
                 "db04",
-				"db05",
-				"db06",
+		"db05",
+		"db06",
                 "db07",
-				"db08",
+		"db08",
                 "db09",
-				"db10"
+		"db10"
             ],
             "metadata": {
                 "description": "Array of databases names."
