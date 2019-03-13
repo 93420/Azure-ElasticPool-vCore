@@ -16,21 +16,12 @@
             },
         "serverName": {
             "type": "string",
-	    "defaultValue": "93420srv001",
             "metadata": {
                 "description": "SQL Server name."
 				}
             },
-        "location": {
-            "type": "string",
-            "defaultValue": "eastus",
-            "metadata": {
-                "description": "Location for all resources."
-            }
-        },
         "elasticPoolName": {
             "type": "string",
-	    "defaultValue": "93420pool001",
             "metadata": {
                 "description": "The Elastic Pool name."
 				}
@@ -52,7 +43,7 @@
         },
         "poolLimit": {
             "type": "int",
-			"defaultValue": "8",
+			"defaultValue": 8,
             "metadata": {
                 "description": "The Elastic Pool vCore."
 				}
@@ -66,11 +57,11 @@
         },
         "perDatabasePerformanceMin": {
 			"type": "int",
-            "defaultValue": "0"
+            "defaultValue": 0
         },
         "perDatabasePerformanceMax": {
 		"type": "int",
-            "defaultValue": "4"
+            "defaultValue": 4
         },
         "zoneRedundant": {
             "type": "bool",
@@ -129,7 +120,7 @@
                     "dependsOn": [
                         "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
                     ],
-                    "location": "[parameters('location')]",
+                    "location": "[resourceGroup().location]",
                     "name": "[concat(parameters('serverName'), '/', parameters('elasticPoolName'))]",
                     "sku": {
                         "name": "[parameters('skuName')]",
