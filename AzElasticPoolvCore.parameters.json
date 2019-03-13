@@ -31,7 +31,7 @@
                 "description": "The Elastic Pool name."
         },
         "skuName": {
-			"type": "string",,
+			"type": "string",
             "defaultValue": "GP_Gen4",
 			"allowedValues": [
                 "GP_Gen4",
