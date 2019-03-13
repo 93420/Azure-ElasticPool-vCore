@@ -3,18 +3,23 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "administratorLogin": {
-            "type": "string"
-        },
+            "type": "string",
+            "metadata": {
+                "description": "SQL Server administrator login."
+			}
+            },
         "administratorLoginPassword": {
-            "type": "securestring"
-        },
+            "type": "securestring",
+            "metadata": {
+                "description": "SQL Server administrator login password."
+				}
+            },
         "serverName": {
             "type": "string",
-            "defaultValue": "crelasticsrv001",
             "metadata": {
-                "description": "The SQL Server name."
-            }
-        },
+                "description": "SQL Server name."
+				}
+            },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
@@ -24,28 +29,46 @@
         },
         "elasticPoolName": {
             "type": "string",
-            "defaultValue": "crelasticpool001",
             "metadata": {
                 "description": "The Elastic Pool name."
-            }
+				}
         },
         "skuName": {
-            "type": "string"
+			"type": "string",
+            "defaultValue": "GP_Gen4",
+			"allowedValues": [
+                "GP_Gen4",
+                "GP_Gen5"
+            ],
+            "metadata": {
+                "description": "The Elastic Pool sku."
+            }
         },
         "tier": {
-            "type": "string"
+			"type": "string",
+            "defaultValue": "GeneralPurpose"
         },
         "poolLimit": {
-            "type": "string"
+            "type": "int",
+			"defaultValue": "8",
+            "metadata": {
+                "description": "The Elastic Pool vCore."
+				}
         },
         "poolSize": {
-            "type": "int"
+            "defaultValue": 16106127360,
+			"type": "int",
+            "metadata": {
+                "description": "The Elastic Pool Size."
+            }
         },
         "perDatabasePerformanceMin": {
-            "type": "string"
+			"type": "int",
+            "defaultValue": "0"
         },
         "perDatabasePerformanceMax": {
-            "type": "string"
+		"type": "int",
+            "defaultValue": "4"
         },
         "zoneRedundant": {
             "type": "bool",
@@ -53,20 +76,28 @@
         },
         "licenseType": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "LicenseIncluded"
         },
         "allowAzureIps": {
             "type": "bool",
             "defaultValue": true
         },
         "databasesNames": {
-            "type": "array",
+			"type": "array",
             "defaultValue": [
-                "db1",
-                "db2"
+                "db01",
+                "db02",
+				"db03",
+                "db04",
+				"db05",
+				"db06",
+                "db07",
+				"db08",
+                "db09",
+				"db10"
             ],
             "metadata": {
-                "description": "The SQL Databases names."
+                "description": "Array of databases names."
             }
         },
         "databaseCollation": {
